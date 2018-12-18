@@ -1,0 +1,20 @@
+<mat-card class="col-md-3">
+  <mat-card-content class="mat-card-content">
+    
+    <h3>{{project.projectName}}</h3>
+    <hr class="colorgraph">
+    <dl>
+      <ng-container *ngFor="let departmentHours of project.departmentsHours">
+        <dt>{{departmentHours.department.departmentName}}</dt>
+        <dd>{{departmentHours.numHours}}</dd>
+      </ng-container>
+    </dl>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="updateWorkersHours()">
+            <i class="fa fa-clock-o"></i>
+            Update workers hours
+        </button>
+    </mat-card-actions>
+
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,17 @@
+<div>
+  <form [formGroup]="filterFormGroup" (ngSubmit)="onSubmit()">
+    <!-- month -->
+    <app-select [list]="months" [key]="'monthId'" [value]="'monthName'" [formControl]="monthId" [placeholder]="'Month'" ngDefaultControl></app-select>
+
+    <!-- workerId -->
+    <app-select [list]="workers" [key]="'userId'" [value]="'userName'" [formControl]="workerId" [placeholder]="'Worker'" ngDefaultControl></app-select>
+
+    <!-- teamLeaderId -->
+    <app-select [list]="teamLeaders" [key]="'userId'" [value]="'userName'" [formControl]="teamLeaderId" [placeholder]="'Team Leader'"
+      ngDefaultControl></app-select>
+
+    <!-- projectId -->
+    <app-select [list]="projects" [key]="'projectId'" [value]="'projectName'" [formControl]="projectId" [placeholder]="'Project'"
+      ngDefaultControl></app-select>
+  </form>
+</div>

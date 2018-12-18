@@ -1,0 +1,18 @@
+<p-treeTable [value]="info">
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of colomns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+        <tr>
+            <td *ngFor="let col of colomns; let i = index">
+                <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                <span>{{rowData[col.field]}}</span>    
+            </td>
+        </tr>
+    </ng-template>
+</p-treeTable>
+

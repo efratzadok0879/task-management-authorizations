@@ -1,0 +1,27 @@
+<div *ngIf="project">
+  <h1>{{project.projectName}}</h1>
+  <dl class="row">
+    <dt>Total Hours: </dt>
+    <dd>{{project.totalHours}}</dd>
+    <dt>Workers Hours: </dt>
+    <dd>{{workersHours}}</dd>
+    <dt>Presence: </dt>
+    <dd>{{presence | number : '1.2-2'}}</dd>
+  </dl>
+
+  <mat-card class="col-md-4" *ngFor="let departmentHours of project.departmentsHours">
+    <mat-card-content class="mat-card-content">
+      <h3>{{departmentHours.department.departmentName}}: {{departmentHours.numHours}}</h3>
+      <div *ngFor="let worker of departmentHours.department.workers">
+        <span class="col-md-3">{{worker.userName}}</span>
+        <span class="col-md-3">{{worker.workerHours[0].numHours}}</span>
+        <span class="col-md-3">{{getPresenceHours(worker)| number : '1.2-2'}}</span>
+
+        <button mat-raised-button color="primary" (click)="updateHours(worker,departmentHours)" class="col-md-3">
+          <i class="fa fa-pencil-square-o"></i>
+          Update
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

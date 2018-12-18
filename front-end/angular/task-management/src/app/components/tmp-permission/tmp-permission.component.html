@@ -1,0 +1,5 @@
+<mat-list-item *ngIf="permission">
+  <i class="fa fa-minus-square" (click)="deletePermission()" matTooltip="remove"></i>
+  <span>{{permission.project.projectName}}</span>
+</mat-list-item>
+<mat-divider></mat-divider>

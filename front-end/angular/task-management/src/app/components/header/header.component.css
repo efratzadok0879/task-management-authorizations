@@ -1,0 +1,45 @@
+header{
+    height: 15%;   
+    border-bottom: solid 1px #9e9e9e85;
+    margin: 0 2%;
+}
+.logo,.user{
+    float: left;
+    width: 25%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+.logo H1{
+    margin: 0 5%;
+    color: #3f51b5;
+    font-size: 50px;
+}
+.user{
+    float:right;
+}
+.userName{    
+    font-size: 25px;
+    font-weight: bold;
+    padding: 3%;
+    color:#9E9E9E;
+    height: max-content;
+    text-align: right;
+}
+.profile{
+    height: max-content;
+}
+img{
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
+i{
+    font-size: 75px;
+    color: #ccc;
+}
+
+
+

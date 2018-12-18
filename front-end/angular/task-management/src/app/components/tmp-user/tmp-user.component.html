@@ -1,0 +1,33 @@
+<mat-card class="col-md-3">
+    <mat-card-content class="mat-card-content">
+        <img [src]="imageUrl">
+        <h3>{{user.userName}}</h3>
+        <h5 *ngIf="user.departmentId">{{user.department.departmentName}}</h5>
+        <h5 *ngIf="!user.departmentId">Team Leader</h5>
+    </mat-card-content>
+
+    <mat-card-actions>
+        
+        <ng-container *ngIf="listKind==eListKind.ALL_WORKERS">
+            <button mat-raised-button color="primary" (click)="edit()">
+                <i class="fa fa-pencil-square-o"></i>
+                Edit
+            </button>
+            <button mat-raised-button color="primary" (click)="delete()">
+                <i class="fa fa-trash-o"></i>
+                Delete
+            </button>
+            <button *ngIf="user.departmentId" mat-raised-button color="primary" (click)="definePermissions()">
+                <i class="fa fa-lock"></i>
+                Permissions
+            </button>
+        </ng-container>
+
+        <ng-container *ngIf="listKind==eListKind.TEAM_LEADERS">
+            <button class="team-management" mat-raised-button color="primary" (click)="teamManagement()">
+                <i class="fa fa-users"></i>
+                Team Management
+            </button>
+        </ng-container>
+    </mat-card-actions>
+</mat-card>

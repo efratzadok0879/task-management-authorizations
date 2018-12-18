@@ -1,0 +1,30 @@
+<mat-card class="col-md-3">
+  <mat-card-content class="mat-card-content">
+
+    <h3>{{project.projectName}}</h3>
+    <hr class="colorgraph">
+    <dl>
+      <dt>Done:</dt>
+      <dd>{{projectPercentHours |percent}}</dd>
+
+      <dt>Company Name:</dt>
+      <dd>{{project.customer.customerName}}</dd>
+
+      <dt>Start Date:</dt>
+      <dd>{{project.startDate | date: 'dd/MM/yyyy'}}</dd>
+
+      <dt>End Date:</dt>
+      <dd>{{project.endDate | date: 'dd/MM/yyyy'}}</dd>
+
+      <dt>Defined:</dt>
+      <dd>{{project.totalHours}} hours</dd>
+
+      <dt>Worked:</dt>
+      <dd> {{projectPresenseHours| number : '1.2-2'}} hours</dd>
+
+      <dt>Needs More:</dt>
+      <dd>{{(project.totalHours-projectPresenseHours)| number : '1.2-2'}} hours</dd>
+    </dl>
+
+  </mat-card-content>
+</mat-card>

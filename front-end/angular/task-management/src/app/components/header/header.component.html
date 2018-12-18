@@ -1,0 +1,18 @@
+<header class="row">
+
+  <div class="logo">
+    <img src="./../../../assets/logo.png">
+    <h1>TaskMe</h1>
+  </div>
+
+  <app-menu></app-menu>
+
+  <div class="user">
+    <span class="userName col-md-8">Hello {{global.CURRENT_USER.userName}}</span>
+    <div class="profile col-md-4">
+      <img *ngIf="global.CURRENT_USER.profileImageName" src="{{global.UERS_PROFILES}}/{{global.CURRENT_USER.profileImageName}}">
+      <i *ngIf="!global.CURRENT_USER.profileImageName" class="fa fa-user-circle-o"></i>
+    </div>
+  </div>
+
+</header>

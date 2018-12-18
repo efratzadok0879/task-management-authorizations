@@ -1,0 +1,38 @@
+<mat-card class="container">
+  <div class="row">
+    <div class="thumbur">
+      <i class="fa fa-users"></i>
+    </div>
+    <h2>Team managmant
+      <small>in our company</small>
+    </h2>
+    <hr class="colorgraph">
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-6">
+          <!-- teamLeader-details -->
+          <div *ngIf="teamLeader">
+            <h3>
+              Team Leader:
+              <small>{{teamLeader.userName}}</small>
+            </h3>
+            <img *ngIf="teamLeader.profileImageName" src="{{global.UERS_PROFILES}}/{{teamLeader.profileImageName}}">
+            <i *ngIf="!teamLeader.profileImageName" class="fa fa-user-circle-o"></i>
+            <h3>Team Workers:</h3>
+          </div>
+
+          <!-- workerList that under this teamLeader -->
+          <ul>
+            <div *ngFor="let teamWorker of teamWorkers">{{teamWorker.userName}}</div>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <!-- belong extra workers under this teamLeader -->
+          <app-select-workers *ngIf="extraWorkers" [workers]="extraWorkers" [title]="'Add extra team workers:'" [isTeamManagement]="true" 
+            (selectedWorkerEvent)="submit($event)"></app-select-workers>
+        </div>
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card>

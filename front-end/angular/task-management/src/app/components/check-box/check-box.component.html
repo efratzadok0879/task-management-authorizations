@@ -1,0 +1,6 @@
+<div class="group">
+  <mat-checkbox type="checkbox" [formControl]="checkControl" (change)="onChange()">{{label}}</mat-checkbox>
+  <div *ngIf="checkControl.errors">
+    <p *ngFor="let err of objectHolder.values(checkControl.errors)" class="myAlert">{{err}}</p>
+  </div>
+</div>

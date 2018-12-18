@@ -1,0 +1,12 @@
+.group {
+    margin-bottom: 0;
+}
+
+.row {
+    margin-left: 7% !important;
+}
+
+.selected {
+    margin-top: 2%;
+    font-size: 19px;
+}

@@ -1,0 +1,67 @@
+<mat-card class="container">
+  <div class="row">
+    <div class="thumbur">
+      <i class="fa fa-plus"></i>
+    </div>
+    <div *ngIf="projectFormGroup">
+      <h2>Add a new project
+        <small>our company is expanding!</small>
+      </h2>
+      <hr class="colorgraph">
+      <mat-card-content>
+        <form [formGroup]="projectFormGroup" (ngSubmit)="onSubmit()" #formDirective="ngForm">
+
+          <div class="row">
+            <div class="col-md-6">
+
+              <!-- projectName -->
+              <app-input [formControl]="projectName" placeholder="Project name" ngDefaultControl></app-input>
+
+              <!-- customerId -->
+              <app-select [list]="customers" key="customerId" value="customerName" [formControl]="customerId" placeholder="Customer" ngDefaultControl></app-select>
+
+              <!-- teamLeaderId -->
+              <app-select [list]="teamLeaders" key="userId" value="userName" [formControl]="teamLeaderId" placeholder="Team leader" (onChangeEvent)="onTeamLeaderChange()"
+                ngDefaultControl></app-select>
+
+              <!-- startDate -->
+              <app-date-picker [date]="startDate" placeholder="Start date"></app-date-picker>
+
+              <!-- endDate -->
+              <app-date-picker [date]="endDate" placeholder="End date"></app-date-picker>
+
+            </div>
+            <div class="col-md-6">
+
+              <!-- departmentsHours -->
+              <label class="group">Enter hours to every department: </label>
+              <div *ngIf="departments" formGroupName="totalHours">
+                <app-input *ngFor="let department of departments" [formControl]="totalHours.controls[department.departmentName]" type="number"
+                  [placeholder]="department.departmentName" [min]="0" ngDefaultControl></app-input>
+              </div>
+
+              <!-- totalHours -->
+              <div class="group">
+                <label>Total hours: {{getTotalHours()}}</label>
+                <div *ngIf="totalHours.errors&&totalHours.touched">
+                  <p *ngFor="let err of objectHolder.values(totalHours.errors)" class="myAlert">{{err}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+      
+          <hr/>
+          <!-- permissions -->
+          <app-select-workers *ngIf="extraWorkers" [workers]="extraWorkers" [title]="'Add permission to extra workers:'" (selectedWorkerEvent)="getSelectedWorkers($event)"></app-select-workers>
+
+          <hr class="colorgraph">
+
+          <button mat-raised-button color="primary" class="col-md-12" [disabled]="projectFormGroup.invalid">
+            Save
+          </button>
+        </form>
+      </mat-card-content>
+    </div>
+  </div>
+</mat-card>

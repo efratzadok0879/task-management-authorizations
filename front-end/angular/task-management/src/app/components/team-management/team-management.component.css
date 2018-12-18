@@ -1,0 +1,13 @@
+* {
+    text-align: center;
+}
+
+img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.thumbur i.fa-users {
+    font-size: 40px;
+}

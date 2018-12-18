@@ -1,0 +1,13 @@
+footer {
+    height: 15%;
+    border-top: solid 1px #FFC107;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+
+h3 {
+    color: #9E9E9E;
+    vertical-align: middle;
+    margin: 0;
+}

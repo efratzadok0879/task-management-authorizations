@@ -1,0 +1,17 @@
+<button type="button" class="close" (click)="close()">&times;</button>
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="emailFormGroup">
+
+    <!-- subject -->
+    <app-input [formControl]="subject" [placeholder]="'subject'" ngDefaultControl></app-input>
+    <!-- body -->
+    <app-textarea [formControl]="body" [placeholder]="'Enter your message here:'" ngDefaultControl></app-textarea>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="emailFormGroup.value" cdkFocusInitial>Send</button>
+  <button mat-button (click)="close()">Cancle</button>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="group">
+      <h2>Projects Hours vs Presence Hours</h2>
+      <p>to see status of specific project, please select a project from combo-box.</p>
+  </div>
+  <div class="row">
+      <app-select class="col-md-3" [list]="projects" [key]="'projectName'" [value]="'projectName'" [formControl]="projectControl"
+          [placeholder]="'select project'" (onChangeEvent)="onProjectChange()" ngDefaultControl></app-select>
+      <p class="selected"><b>Project: </b>
+          <span *ngIf="projectControl.value">{{projectControl.value}}</span>
+          <span *ngIf="!projectControl.value">All</span>
+       </p>
+  </div>
+  <app-graph-chart *ngIf="projectsHours&&presenceHours" [projectsHours]="projectsHours" [presenceHours]="presenceHours" [titleX]="titleX"></app-graph-chart>
+</div>

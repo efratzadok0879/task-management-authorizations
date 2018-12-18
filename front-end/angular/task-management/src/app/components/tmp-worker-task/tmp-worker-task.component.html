@@ -1,0 +1,14 @@
+<mat-list-item>
+    <div *ngIf="complete" class="deleted"></div>
+    <span class="col-md-2">{{workerHour.project.projectName}}</span>
+    <span class="col-md-2">{{workerHour.numHours}}</span>
+    <span class="col-md-2">{{presence | date:"HH:mm:ss"}}</span>
+    <span class="col-md-2">
+        <button mat-fab color="primary" [matTooltip]="btnMessage" aria-label="Button that displays a tooltip when focused or hovered over"
+            (click)="btnTaskClick()" [disabled]="disabled&&isStarted==false||complete">
+            <i [ngClass]="btnIcon"></i>
+        </button>
+    </span>
+    <app-timer class="col-md-2" [isStarted]="isStarted"></app-timer>
+</mat-list-item>
+<mat-divider></mat-divider>

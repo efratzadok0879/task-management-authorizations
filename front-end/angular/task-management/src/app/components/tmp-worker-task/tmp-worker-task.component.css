@@ -1,0 +1,25 @@
+.mat-list-item {
+    margin: 2%;
+}
+
+.col-md-2 {
+    width: 20%;
+}
+
+.fa-play {
+    font-size: 30px;
+    margin-left: 7px;
+    margin-top: -2px;
+}
+
+.fa-pause {
+    font-size: 25px;
+}
+
+.deleted {
+    width: 100%;
+    height: 1px;
+    background: black;
+    position: absolute;
+    z-index: 1;
+}

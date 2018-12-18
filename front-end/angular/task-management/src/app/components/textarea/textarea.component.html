@@ -1,0 +1,8 @@
+<div class="group">
+  <mat-form-field>
+    <textarea [formControl]="formControl"  matInput [placeholder]="placeholder" [rows]="rowNumber" (keydown)="keyDown($event)"></textarea>
+  </mat-form-field>
+  <div *ngIf="formControl.errors&&formControl.touched">
+    <p *ngFor="let err of objectHolder.values(formControl.errors)" class="myAlert">{{err}}</p>
+  </div>
+</div>

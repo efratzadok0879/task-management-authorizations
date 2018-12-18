@@ -1,0 +1,11 @@
+<mat-list class="container">
+    <mat-list-item>
+        <span class="col-md-2"><strong>Project Name</strong></span>
+        <span class="col-md-2"><strong>Num Hours</strong></span>
+        <span class="col-md-2"><strong>Presence</strong></span>
+
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  <app-tmp-worker-task *ngFor="let workerHour of workerHours" [workerHour]="workerHour" [disabled]="isStartedTaskExist" 
+  (isStartedEvent)="disableButtons($event)"></app-tmp-worker-task>
+</mat-list>

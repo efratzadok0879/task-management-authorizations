@@ -1,0 +1,56 @@
+<mat-card class="container">
+  <div class="row">
+    <div class="thumbur">
+      <i *ngIf="caption=='Add User'" class="fa fa-plus"></i>
+      <i *ngIf="caption=='Edit User'" class="fa fa-pencil"></i>
+    </div>
+    <h2>Manage our users
+      <small>in our company</small>
+    </h2>
+    <hr class="colorgraph">
+    <mat-card-content>
+      <form *ngIf="userFormGroup" [formGroup]="userFormGroup" (ngSubmit)="onSubmit()">
+
+        <!-- userName,email,password,confirmPassword -->
+        <div class="row">
+          <app-input  [formControl]="userName"  placeholder="User name" ngDefaultControl class="col-md-6"></app-input>
+          <app-input [formControl]="email"  placeholder="Email" ngDefaultControl class="col-md-6"></app-input>
+        </div>
+
+        <div class="row" *ngIf="!user.userId">
+          <app-input [formControl]="password" type="password" placeholder="password" ngDefaultControl class="col-md-6"></app-input>
+          <app-input [formControl]="confirmPassword" type="password" placeholder="confirm password" ngDefaultControl class="col-md-6"></app-input>
+        </div>
+        
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <!-- isTeamLeader -->
+              <app-check-box [checkControl]="isTeamLeader" label="Is a team-leader"></app-check-box>
+            </div>
+            <div>
+              <div *ngIf="!isTeamLeader.value">
+                <!-- departmentId -->
+                <app-select [list]="departments" key="departmentId" value="departmentName" [formControl]="departmentId"
+                  placeholder="Department" ngDefaultControl></app-select>
+
+                <!-- teamLeaderId -->
+                <app-select [list]="teamLeaders" key="userId" value="userName" [formControl]="teamLeaderId" placeholder="Team leader"
+                  ngDefaultControl></app-select>
+              </div>
+            </div>
+          </div>
+
+          <app-upload-img (eventImage)="getImage($event)" [locationUrl]="imageUrl" class="col-md-6"></app-upload-img>
+
+        </div>
+
+        <hr class="colorgraph">
+        <button mat-raised-button color="primary" class="col-md-12" [disabled]="userFormGroup.invalid">
+          {{caption}}
+        </button>
+      </form>
+    </mat-card-content>
+  </div>
+</mat-card>

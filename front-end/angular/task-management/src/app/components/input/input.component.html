@@ -1,0 +1,17 @@
+<div class="group">
+  <mat-form-field>
+    <input [formControl]="formControl" [type]="type" matInput [placeholder]="placeholder" [min]="min" (keyup)="keyUp()">
+   
+    <button type="button" mat-button *ngIf="isPassword" matSuffix mat-icon-button aria-label="Clear" (click)="togglePassword()" >
+      <!-- <span  class="fa fa-fw fa-eye field-icon toggle-password"></span> -->
+      <i class="material-icons">
+        visibility
+        </i>
+    </button>
+   
+  </mat-form-field>
+  <div *ngIf="formControl.errors&&formControl.touched">
+    <p *ngFor="let err of objectHolder.values(formControl.errors)" class="myAlert">{{err}}</p>
+  </div>
+</div>
+

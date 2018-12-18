@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="vector-image col-md-9">
+    <img src="../../../assets/login-background.jpg">
+    <div class="bottom">
+      <h1>TaskMe</h1>
+      <h4>By Efrat Zadok & Tamar Yankelevich</h4>
+    </div>
+  </div>
+  <div class="login col-md-3">
+    <div>
+      <div class="thumbur">
+        <i class="fa fa-lock"></i>
+      </div>
+      <h2>Please Sign In
+        <small>to our company</small>
+      </h2>
+      <hr class="colorgraph">
+      <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+
+        <!-- email -->
+        <app-input [formControl]="email" placeholder="Email" (keyUpEvent)="removeValidationMassage()"
+          ngDefaultControl></app-input>
+
+        <!-- password -->
+
+        <!-- <show-hide-password size="lg" icon="entypo" btnStyle="primary" [btnOutline]="false"> -->
+        <!-- <app-input [formControl]="password" [placeholder]="Password" [type]="password" (keyUpEvent)="removeValidationMassage()"
+            ngDefaultControl></app-input> -->
+        <!-- <input type="password" [placeholder]="Password" [formControl]="password" (keyUpEvent)="removeValidationMassage()">
+          </show-hide-password> -->
+        
+        <app-input [formControl]="password" placeholder="Password" type="password" (keyUpEvent)="removeValidationMassage()"
+          ngDefaultControl>
+
+        </app-input>
+
+        <p *ngIf="!isExistUser" class="myAlert">Email or password is not correct</p>
+
+        <hr class="colorgraph">
+        <button mat-raised-button color="primary" class="col-md-12" [disabled]="loginFormGroup.invalid||isExistUser==false">
+          Login
+        </button>
+      </form>
+      <hr>
+      <app-forgot-password></app-forgot-password>
+    </div>
+  </div>
+</div>

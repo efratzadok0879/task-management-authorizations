@@ -1,0 +1,28 @@
+.menu {
+    float: left;
+    width: 50%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mat-menu-item {
+    text-align: right !important;
+}
+
+.mat-tab-link {
+    font-size: 1rem;
+    width: 168px;
+    background-color: white;
+    font-family: "Segoe UI" !important;
+    font-size: 16px !important;
+    font-weight: 400;
+}
+.mat-ink-bar{
+    width: 168px;
+}

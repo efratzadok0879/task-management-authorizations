@@ -1,0 +1,10 @@
+<div *ngIf="list" class="group">
+    <mat-form-field>
+      <mat-select [formControl]="formControl" [placeholder]="placeholder" (selectionChange)="onChange()">
+        <mat-option *ngFor="let item of list" [value]="item[key]">{{item[value]}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="formControl.errors&&formControl.touched">
+      <p *ngFor="let err of objectHolder.values(formControl.errors)" class="myAlert">{{err}}</p>
+    </div>
+  </div>

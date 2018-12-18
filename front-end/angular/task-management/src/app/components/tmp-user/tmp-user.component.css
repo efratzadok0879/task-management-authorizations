@@ -1,0 +1,29 @@
+.col-md-3 {
+    width: 23%;
+    margin: 1%;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.mat-card-content {
+    text-align: center;
+}
+
+.mat-card-actions {
+    text-align: center;
+    height: 110px;
+}
+
+.mat-raised-button {
+    width: 46%;
+    margin: 2% !important;
+}
+
+.team-management{
+    width: max-content;
+    padding: 0% 5%;
+}

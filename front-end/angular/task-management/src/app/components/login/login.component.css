@@ -1,0 +1,76 @@
+.container{
+    height: 100%;
+    width: 100%;
+}
+.vector-image{
+    height: 100%;
+    background: #50c5cf;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    transform: skew(10deg);
+    margin-left: -6%; 
+    margin-right: 2%;
+     width: 74%;
+}
+.vector-image img{
+    display: -webkit-box;
+    transform: skew(-10deg);
+}
+.vector-image .bottom{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #33a2b5;
+    width: 100%;
+    height: 39.3%;
+}
+.vector-image h1 {
+    color: white;
+    font-size: 70px;
+    transform: skew(-10deg);
+}
+
+.login{
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    height: 100%;
+    width: 28%;
+}
+
+.thumbur:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background-color: #efefef;
+    left: 50%;
+    bottom: 22px;
+    z-index: 5;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
+i.fa-lock::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #efefef;
+    left: 50%;
+    top: 30px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 100%;
+}
+
+.thumbur i.fa-lock {
+    font-size: 55px;
+}
+h4{
+    color: white;
+}

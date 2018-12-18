@@ -1,0 +1,24 @@
+<div class="row">
+  <h4>{{title}}</h4>
+  <hr />
+  <div class="col-md-6">
+    <!-- workers-dropDownList -->
+    <app-select [list]="workers" [key]="'userId'" [value]="'userName'" [formControl]="selectedWorkerControl"
+      [placeholder]="'Worker'" (onChangeEvent)="addWorker()" ngDefaultControl></app-select>
+  </div>
+  <div class="col-md-6">
+    <h4>Selected:</h4>
+    <!-- selected workers -->
+    <mat-list>
+      <ng-container *ngFor="let selectedWorker of selectedWorkers">
+        <mat-list-item>
+          <i class="fa fa-minus-square" (click)="removeWorker(selectedWorker)" matTooltip="remove"></i>
+          <span class="worker-name">{{selectedWorker.userName}}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+    <button mat-raised-button color="primary" *ngIf="isTeamManagement" (click)="submit()">save</button>
+
+  </div>
+</div>

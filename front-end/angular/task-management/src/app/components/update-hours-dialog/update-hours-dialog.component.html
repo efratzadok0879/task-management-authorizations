@@ -1,0 +1,11 @@
+<button type="button" class="close" (click)="close()">&times;</button>
+<h1 mat-dialog-title>Update Hours</h1>
+<div mat-dialog-content>
+    <div class="group"><b>Name: </b>{{data.worker.userName}}</div>
+    <app-input *ngIf="numHoursControl" name="numHours" [formControl]="numHoursControl" placeholder="num hours" type="number" ngDefaultControl></app-input>
+
+    <div class="group"><b>Presence: </b>{{presenceHours| number : '1.2-2'}}</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" [disabled]="numHoursControl.invalid" [mat-dialog-close]="numHoursControl.value" cdkFocusInitial>Save</button>
+</div>

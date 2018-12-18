@@ -1,0 +1,20 @@
+.col-md-3 {
+    width: 23%;
+    margin: 2% 0;
+}
+
+.col-md-4 {
+    width: 30.333333%;
+    margin: 1.5%;
+    height: 85%;
+    height: 50vh;
+    overflow-y: auto;
+}
+
+dt, dd {
+    float: left;
+}
+
+dd {
+    width: 5%
+}

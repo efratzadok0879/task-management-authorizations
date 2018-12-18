@@ -1,0 +1,7 @@
+<div *ngIf="user">
+  <app-add-permission [user]="user"></app-add-permission>
+  <h4>Projects Access Permissions:</h4>
+  <mat-list>
+    <app-tmp-permission *ngFor="let permission of user.permissions" [permission]="permission"></app-tmp-permission>
+  </mat-list>
+</div>
